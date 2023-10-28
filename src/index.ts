@@ -1,0 +1,1 @@
+export {jokesWidget} from './plugin'
