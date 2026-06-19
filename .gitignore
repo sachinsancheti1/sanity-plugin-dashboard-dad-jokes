@@ -58,3 +58,6 @@ yalc.lock
 
 # Compiled plugin
 dist
+
+# Stray dev/null artifact created by some tools on Windows
+/dev/
