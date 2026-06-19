@@ -1,12 +1,12 @@
 # sanity-plugin-dashboard-dad-jokes
 
-> This is a **Sanity Studio v3** plugin.
+> This is a **Sanity Studio v3+** plugin (works on Studio v3, v4, and v5).
 
 ## Why???
 
 Who doesn't like jokes. A dad joke is lame enough to make you laugh and cry at the same time.
 
-![Sample Joke](assets/joke.png)
+![Sample Joke](https://raw.githubusercontent.com/sachinsancheti1/sanity-plugin-dashboard-dad-jokes/main/assets/joke.png)
 
 ## What is happening in the background?
 
@@ -15,33 +15,37 @@ This widget takes dad jokes from [https://icanhazdadjoke.com/](https://icanhazda
 ## Installation
 
 ```sh
-npm install --save sanity-plugin-dashboard-dad-jokes
+npm install sanity-plugin-dashboard-dad-jokes
 ```
 
-Ensure that you have followed install and usage instructions for @sanity/dashboard
+This widget is rendered by [`@sanity/dashboard`](https://github.com/sanity-io/dashboard), which is a peer dependency. Install it too if you haven't already:
+
+```sh
+npm install @sanity/dashboard
+```
 
 ## Usage
 
-Add it as a widget in `sanity.config.ts` (or .js):
+Add `dashboardTool` to your `plugins` and pass `jokesWidget()` as one of its widgets in `sanity.config.ts` (or `.js`):
 
 ```ts
 import {defineConfig} from 'sanity'
-import { dashboardTool } from "@sanity/dashboard";
-import { jokesWidget } from "sanity-plugin-dashboard-dad-jokes";
+import {dashboardTool} from '@sanity/dashboard'
+import {jokesWidget} from 'sanity-plugin-dashboard-dad-jokes'
 
 export default defineConfig({
-  //...
-  dashboardTool({
-    widgets: [
-        jokesWidget(),
-    ],
-  }),
+  // ...
+  plugins: [
+    dashboardTool({
+      widgets: [jokesWidget()],
+    }),
+  ],
 })
 ```
 
-## Size Config
+## Size config
 
-The widget size can be controlled using layout.width:
+The widget size can be controlled using `layout.width`:
 
 ```ts
 dashboardTool({

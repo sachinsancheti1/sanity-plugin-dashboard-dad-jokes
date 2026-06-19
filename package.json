@@ -1,10 +1,13 @@
 {
   "name": "sanity-plugin-dashboard-dad-jokes",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A dashboard widget for Sanity Content Studio to obtain dad jokes",
   "keywords": [
     "sanity",
-    "sanity-plugin"
+    "sanity-plugin",
+    "dashboard",
+    "widget",
+    "dad-jokes"
   ],
   "homepage": "https://github.com/sachinsancheti1/sanity-plugin-dashboard-dad-jokes#readme",
   "bugs": {
@@ -31,8 +34,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src",
-    "v2-incompatible.js"
+    "src"
   ],
   "browserslist": "extends @sanity/browserslist-config",
   "sideEffects": false,
@@ -46,13 +48,13 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
-    "@sanity/dashboard": "^5.0.1",
-    "@sanity/incompatible-plugin": "^1.0.5"
+    "@sanity/ui": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
     "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/dashboard": "^5.0.1",
     "@sanity/pkg-utils": "^7.9.7",
     "@sanity/plugin-kit": "^4.0.19",
     "@types/react": "^19.1.8",
@@ -76,7 +78,9 @@
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
+    "@sanity/dashboard": "^5",
     "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
     "sanity": "^3 || ^4 || ^5"
   },
   "engines": {
@@ -84,7 +88,8 @@
   },
   "sanityPlugin": {
     "verifyPackage": {
-      "eslintImports": false
+      "eslintImports": false,
+      "sanityV2Json": false
     }
   }
 }
