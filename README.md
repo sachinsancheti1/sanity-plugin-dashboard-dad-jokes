@@ -1,6 +1,6 @@
 # sanity-plugin-dashboard-dad-jokes
 
-> This is a **Sanity Studio v3+** plugin (works on Studio v3, v4, and v5).
+> This is a **Sanity Studio v4+** plugin (works on Studio v4, v5, and v6).
 
 ## Why???
 
